@@ -1,0 +1,26 @@
+header{
+    height: 4rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 9px;
+}
+.blog,.Contact,.Admin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 5vw;
+    border-radius: 10px;
+    border: solid 2px white;
+}
+.blog:hover,.Contact:hover,.Admin:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}

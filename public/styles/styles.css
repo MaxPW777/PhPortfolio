@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap");
+
+:root {
+  --secondary-color: #fd0f0f;
+  --primary-color: #fff;
+  --background-color: #000;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+    margin: 0;
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+/* Style for the scrolling text */
+.Name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  bottom: 1%; /* Adjust the distance from the bottom */
+  right: 1%; /* Adjust the distance from the right */
+  font-size: 8em; /* Set the font size as needed */
+  font-family: "JetBrains Mono", monospace; /* Set the font family as needed */
+  width: auto;
+  text-align: right;
+  cursor: pointer;
+  transform: blur(0.5px);
+  text-decoration: none;
+  color: var(--primary-color);
+  h5{
+      font-size: 2rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+  };
+}
+
+.Name:hover{
+    animation: turnToRed 1s ease-in-out forwards;
+}
+
+/* Style for the main content */
+.content {
+  height: 2000px; /* Replace with your content's height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+}
+
+.ImageDiv{
+    position: fixed;
+    top: 10%; /* Adjust the distance from the bottom */
+    left: 10%; /* Adjust the distance from the right */
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    border: 1rem solid var(--primary-color);
+    background-image: url("../images/pfp.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+@keyframes turnToRed {
+    100% {
+        color: #fd0f0f;
+    }
+}
