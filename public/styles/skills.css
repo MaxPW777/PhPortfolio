@@ -15,13 +15,16 @@ a {
 
 main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80vw;
-  height: 70vh;
+  width: 70vw;
+  height: 90vh;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -29,15 +32,22 @@ main {
 }
 
 .skill {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 30rem; 
-    width: 99%;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 30rem;
+  width: 20rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 1rem;
+  border-radius: 7px;
+  transition: all 0.2s ease-in-out;
+}
 
-.selected{
-    background-color: rgba(255, 255, 255, 0.3);
+.selected {
+  background-color: rgba(255, 255, 255, 0.3);
+  width: 100%;
+  animation: none;
+  order: -1;
+  height: 100%;
 }

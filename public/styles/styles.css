@@ -5,6 +5,10 @@
     --secondary-color: #f2f2f2;
 }
 
+*{
+    box-sizing: border-box;
+}
+
 body{
     background-color: var(--primary-color);
     color: var(--secondary-color);

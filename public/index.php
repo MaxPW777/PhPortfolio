@@ -29,6 +29,7 @@ switch ($url) {
         break;
     case $url[0] == 'skills':
         $cssFile = 'skills.css';
+        $jsFile = 'skills.js';
         include '../includes/header.php';
         include '../pages/Skills.php';
         break;
