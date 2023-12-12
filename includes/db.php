@@ -1,16 +1,14 @@
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "Portfolio";
+try {
+    // Generate PDO connection
+    $pdo = new PDO('mysql:host=127.0.0.1;dbname=portfolio;charset=utf8mb4', 'root', '', [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+    ]);
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+} catch (PDOException $e) {
+    // Handle database connection errors
+    echo "Connection failed: " . $e->getMessage();
 }
-
-echo "Connected successfully";
+?>

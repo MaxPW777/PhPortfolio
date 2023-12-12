@@ -9,6 +9,9 @@
     if(!empty($cssFile)) {
         echo '<link rel="stylesheet" href="styles/' . $cssFile . '">';
     }
+    if(!empty($jsFile)) {
+        echo '<script defer src="js/'. $jsFile . '"></script>';
+    }
     ?>
     <title>Portfolio</title>
 </head>

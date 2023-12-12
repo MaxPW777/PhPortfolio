@@ -8,6 +8,7 @@ grid {
     "Blog Blog Blog Github";
   width: 60rem;
   height: 40rem;
+  gap: 1rem;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -22,10 +23,10 @@ grid {
   background-color: rgba(42, 42, 42, 0.2);
   color: #f2f2f2;
   padding: 1rem;
-  margin: 1rem;
+
   font-size: 2rem;
   border-radius: 0.5rem;
-  box-shadow: 0 0 0.5rem #ffffff;
+  box-shadow: 0 0 0.5rem #000;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -51,6 +52,7 @@ grid {
 }
 .Github {
   grid-area: Github;
+  animation: all 0.2s ease-in-out forwards;
 }
 .Contact {
   grid-area: Contact;
@@ -59,8 +61,10 @@ grid {
 @keyframes hoverBgColor {
     0%{
         background-color: var(--primary-color);
+        color: var(--secondary-color);
     }
     100%{
-        background-color: rgb(194, 87, 87);
+        background-color: rgba(255, 255, 255, 0.174);
+        color: black;
     }
 }

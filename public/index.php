@@ -7,11 +7,13 @@ if (isset($_GET['url'])) {
 
 // Create a default CSS file variable
 $cssFile = '';
+$jsFile = '';
 
 // Generate CSS file based on the requested page
 switch ($url) {
     case '':
         $cssFile = 'home.css';
+        $jsFile = 'home.js';
         include '../includes/header.php';
         include '../pages/Home.php';
         break;
