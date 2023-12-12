@@ -1,0 +1,66 @@
+grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "Presentation Presentation Skills Skills"
+    "Contact Contact Skills Skills"
+    "Blog Blog Blog Github";
+  width: 60rem;
+  height: 40rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.Presentation,
+.Skills,
+.Blog,
+.Github,
+.Contact {
+  background-color: rgba(42, 42, 42, 0.2);
+  color: #f2f2f2;
+  padding: 1rem;
+  margin: 1rem;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.5rem #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.Presentation:hover,
+.Skills:hover,
+.Blog:hover,
+.Github:hover,
+.Contact:hover {
+  animation: hoverBgColor 0.2s ease-in-out forwards;
+}
+
+.Presentation {
+  grid-area: Presentation;
+}
+.Skills {
+  grid-area: Skills;
+}
+.Blog {
+  grid-area: Blog;
+}
+.Github {
+  grid-area: Github;
+}
+.Contact {
+  grid-area: Contact;
+}
+
+@keyframes hoverBgColor {
+    0%{
+        background-color: var(--primary-color);
+    }
+    100%{
+        background-color: rgb(194, 87, 87);
+    }
+}

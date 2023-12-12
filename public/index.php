@@ -1,23 +1,50 @@
 <?php
 
 $url = '';
-if(isset($_GET['url'])) {
+if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
 }
-switch($url) {
-    case '' || !empty($url[0]) == 'info':
-        require '../src/pages/Home.php';
+
+// Create a default CSS file variable
+$cssFile = '';
+
+// Generate CSS file based on the requested page
+switch ($url) {
+    case '':
+        $cssFile = 'home.css';
+        include '../includes/header.php';
+        include '../pages/Home.php';
         break;
     case $url[0] == 'contact':
-        require '../src/pages/Contact.php';
+        $cssFile = 'contact.css';
+        include '../includes/header.php';
+        include '../pages/Contact.php';
+        break;
+    case $url[0] == 'info':
+        $cssFile = 'info.css';
+        include '../includes/header.php';
+        include '../pages/Info.php';
+        break;
+    case $url[0] == 'skills':
+        $cssFile = 'skills.css';
+        include '../includes/header.php';
+        include '../pages/Skills.php';
         break;
     case $url[0] == 'blog':
-        require '../src/pages/Blog.php';
+        $cssFile = 'blog.css';
+        include '../includes/header.php';
+        include '../pages/Blog.php';
         break;
-    case $url[0] == '':
-        require '../src/pages/Login.php';
+    case $url[0] == 'login':
+        $cssFile = 'login.css';
+        include '../includes/header.php';
+        include '../pages/Login.php';
         break;
     default:
-        require '../src/pages/404.php';
+        $cssFile = '404.css';
+        include '../includes/header.php';
+        include '../pages/404.php';
         break;
 }
+
+?>
