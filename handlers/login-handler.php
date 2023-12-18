@@ -6,13 +6,12 @@ $pdo = new DatabaseHandler();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST['name'];
-    $email = $_POST['email'];
-    $message = $_POST['message'];
+    $password = $_POST['password'];
 
-    $pdo->insertContact($name, $email, $message);
+    $pdo->verifyUser($name, $password);
 
     // Redirect back to the contact page or display a success message
-    header('Location: /contact');
+    header('Location: /');
     exit;
 }
 

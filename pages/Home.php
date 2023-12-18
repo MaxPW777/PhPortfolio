@@ -1,4 +1,9 @@
 <h1>Maximilian PINDER-WHITE</h1>
+<p><?php 
+
+$test = crypt("max");
+echo $test;
+?></p>
 <grid>
     <a href="/info" class="Presentation">Presentation</a>
     <a href="/skills" class="Skills">Skills</a>
