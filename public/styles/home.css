@@ -1,3 +1,4 @@
+
 grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -21,9 +22,8 @@ grid {
 .Github,
 .Contact {
   background-color: rgba(42, 42, 42, 0.2);
-  color: #f2f2f2;
+  color: var(--secondary-color);
   padding: 1rem;
-
   font-size: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0 0.5rem #000;
@@ -64,7 +64,7 @@ grid {
         color: var(--secondary-color);
     }
     100%{
-        background-color: rgba(255, 255, 255, 0.174);
+        background-color: rgba(255, 255, 255, 0.356);
         color: black;
     }
 }

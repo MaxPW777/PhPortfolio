@@ -1,4 +1,4 @@
-
+<h1>Maximilian PINDER-WHITE</h1>
 <grid>
     <a href="/info" class="Presentation">Presentation</a>
     <a href="/skills" class="Skills">Skills</a>
