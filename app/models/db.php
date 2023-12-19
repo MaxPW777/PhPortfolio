@@ -21,7 +21,7 @@ class DatabaseHandler {
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
 
-        if ($user && password_verify($password, $user['password'])) {
+        if ($user && $password == $user['Password']) {
             return true; // User exists and password is correct
         } else {
             return false; // User doesn't exist or password is incorrect

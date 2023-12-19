@@ -46,6 +46,9 @@ switch ($url) {
     case $url[0] == 'submit-contact':
         include '../app/controllers/submit-contact.php';
         break;
+    case $url[0] == 'login-handler':
+        include '../app/controllers/login-handler.php';
+        break;
     default:
         $cssFile = '404.css';
         include '../app/views/includes/header.php';

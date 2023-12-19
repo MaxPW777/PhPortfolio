@@ -1,20 +1,25 @@
 <?php
 
-include '../models/db.php';
+
+include '../app/models/db.php'; // Make sure this path is correct
+
+session_start(); // Start a session for login tracking
 
 $pdo = new DatabaseHandler();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $username = $_POST['username']; // Changed 'name' to 'username' for clarity
+    $password = $_POST['password'];
 
     if ($pdo->verifyUser($username, $password)) {
-        $_SESSION['user'] = $username; // Start user session
-        header('Location: /'); // Redirect to a dashboard or another protected page
+        $_SESSION['user'] = $username; // Store username in session
+        header('Location: /'); // Redirect to homepage on success
+        exit;
     } else {
-        $_SESSION['error'] = 'Invalid credentials'; // Store error message in session to display later
-        header('Location: /login.php');
+        // Handle login failure
+        // For example: redirect to login page with an error message
+        header('Location: /login?error=invalid_credentials');
+        exit;
     }
-    exit;
 }
 ?>
