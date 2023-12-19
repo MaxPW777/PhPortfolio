@@ -52,4 +52,13 @@ main {
   animation: none;
   order: -1;
   height: 100%;
+  justify-content: start;
+  align-items: start;
+  flex-direction: row;
+  
+}
+
+img{
+  width: 10rem;
+  height: auto;
 }
