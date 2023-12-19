@@ -14,7 +14,7 @@ switch ($url) {
     case '':
         $cssFile = 'home.css';
         $jsFile = 'home.js';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/Home.php';
         break;
     case $url[0] == 'contact':
@@ -24,23 +24,23 @@ switch ($url) {
         break;
     case $url[0] == 'info':
         $cssFile = 'info.css';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/Info.php';
         break;
     case $url[0] == 'skills':
         $cssFile = 'skills.css';
         $jsFile = 'skills.js';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/Skills.php';
         break;
     case $url[0] == 'blog':
         $cssFile = 'blog.css';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/Blog.php';
         break;
     case $url[0] == 'login':
         $cssFile = 'login.css';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/Login.php';
         break;
     case $url[0] == 'submit-contact':
@@ -48,7 +48,7 @@ switch ($url) {
         break;
     default:
         $cssFile = '404.css';
-        include '../includes/header.php';
+        include '../pages/includes/header.php';
         include '../pages/404.php';
         break;
 }
