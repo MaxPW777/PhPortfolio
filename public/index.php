@@ -14,42 +14,42 @@ switch ($url) {
     case '':
         $cssFile = 'home.css';
         $jsFile = 'home.js';
-        include '../pages/includes/header.php';
-        include '../pages/Home.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Home.php';
         break;
     case $url[0] == 'contact':
         $cssFile = 'contact.css';
-        include '../includes/header.php';
-        include '../pages/Contact.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Contact.php';
         break;
     case $url[0] == 'info':
         $cssFile = 'info.css';
-        include '../pages/includes/header.php';
-        include '../pages/Info.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Info.php';
         break;
     case $url[0] == 'skills':
         $cssFile = 'skills.css';
         $jsFile = 'skills.js';
-        include '../pages/includes/header.php';
-        include '../pages/Skills.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Skills.php';
         break;
     case $url[0] == 'blog':
         $cssFile = 'blog.css';
-        include '../pages/includes/header.php';
-        include '../pages/Blog.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Blog.php';
         break;
     case $url[0] == 'login':
         $cssFile = 'login.css';
-        include '../pages/includes/header.php';
-        include '../pages/Login.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/Login.php';
         break;
     case $url[0] == 'submit-contact':
-        include '../handlers/submit-contact.php';
+        include '../app/controllers/submit-contact.php';
         break;
     default:
         $cssFile = '404.css';
-        include '../pages/includes/header.php';
-        include '../pages/404.php';
+        include '../app/views/includes/header.php';
+        include '../app/views/404.php';
         break;
 }
 

@@ -1,7 +1,7 @@
 <a id="homeBtn" href="/">HOME</a>
 <main>
     <?php
-    include '../includes/db.php';
+    include '../app/models/db.php';
     $pdo = new DatabaseHandler();
     $skills = $pdo->fetchAllSkills();
 

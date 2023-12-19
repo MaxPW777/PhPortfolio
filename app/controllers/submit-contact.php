@@ -1,6 +1,6 @@
 <?php
 
-include '../includes/db.php';
+include '../models/db.php';
 
 $pdo = new DatabaseHandler();
 
