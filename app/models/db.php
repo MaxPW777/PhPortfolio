@@ -43,6 +43,17 @@ class DatabaseHandler
         }
     }
 
+    public function insertPost($Title, $Content){
+        try {
+            $stmt = $this->pdo->prepare("INSERT INTO blogposts (Title, Content) VALUES (?, ?)");
+            $stmt->execute([$Title, $Content]);
+        } catch (PDOException $e) {
+            // Handle errors in data insertion
+            echo "Insertion failed: " . $e->getMessage();
+            exit;
+        }
+    }
+
     public function fetchAllSkills()
     {
         $stmt = $this->pdo->prepare('SELECT * FROM skills');
