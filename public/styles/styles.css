@@ -23,6 +23,5 @@ h1{
     color: var(--secondary-color);
     font-size: 3rem;
     margin-bottom: 1rem;
-    position: absolute;
-    left: 1rem;
+    margin-left: 1rem;
 }

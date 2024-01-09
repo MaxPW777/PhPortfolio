@@ -1,9 +1,11 @@
 <?php
 
-class DatabaseHandler {
+class DatabaseHandler
+{
     private $pdo;
 
-    public function __construct() {
+    public function __construct()
+    {
         try {
             $this->pdo = new PDO('mysql:host=127.0.0.1;dbname=portfolio;charset=utf8mb4', 'root', '', [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
@@ -16,7 +18,8 @@ class DatabaseHandler {
         }
     }
 
-    public function verifyUser($username, $password) {
+    public function verifyUser($username, $password)
+    {
         $stmt = $this->pdo->prepare("SELECT * FROM admin WHERE username = :username");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
@@ -28,7 +31,8 @@ class DatabaseHandler {
         }
     }
 
-    public function insertContact($name, $email, $message) {
+    public function insertContact($name, $email, $message)
+    {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO contactrequests (Name, Email, Message) VALUES (?, ?, ?)");
             $stmt->execute([$name, $email, $message]);
@@ -39,10 +43,19 @@ class DatabaseHandler {
         }
     }
 
-    public function fetchAllSkills() {
+    public function fetchAllSkills()
+    {
         $stmt = $this->pdo->prepare('SELECT * FROM skills');
         $stmt->execute();
         return $stmt->fetchAll();
-    }}
+    }
+
+    public function fetchAllPosts()
+    {
+        $stmt = $this->pdo->prepare('SELECT * FROM blogposts ORDER BY PublishedDate DESC');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+}
 
 ?>
