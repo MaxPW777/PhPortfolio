@@ -68,6 +68,12 @@ class DatabaseHandler
         $stmt->execute();
         return $stmt->fetchAll();
     }
+    public function fetchAllMessages()
+    {
+        $stmt = $this->pdo->prepare('SELECT * FROM contactrequests ORDER BY SubmissionDate DESC');
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
 
     public function getInfoFromCategory($skillId) {
         try {
@@ -100,4 +106,3 @@ class DatabaseHandler
 
 }
 
-?>

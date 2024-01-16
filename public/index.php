@@ -66,5 +66,3 @@ switch ($url) {
         include '../app/views/404.php';
         break;
 }
-
-?>
