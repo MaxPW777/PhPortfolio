@@ -43,6 +43,11 @@ switch ($url) {
         include '../app/views/includes/header.php';
         include '../app/views/Login.php';
         break;
+    case $url[0] == 'admin':
+        $cssFile = 'admin.css';
+        include '../app/views/includes/header.php';
+        include '../app/views/admin.php';
+        break;
     case $url[0] == 'submit-contact':
         include '../app/controllers/submit-contact.php';
         break;

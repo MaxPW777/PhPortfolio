@@ -1,15 +1,5 @@
 <h1>Maximilian PINDER-WHITE</h1>
-<p>
-    <?php
 
-    $test = crypt("franbkdv", "PHPortfolio");
-    echo $test . "\n";
-    if (password_verify('franbkdv', "PHqlx5YgF.XFk" )) {
-        echo 'Password is valid!';
-    } else {
-        echo 'Invalid password.';
-    } ?>
-</p>
 <grid>
     <a href="/info" class="Presentation">Presentation</a>
     <a href="/skills" class="Skills">Skills</a>
