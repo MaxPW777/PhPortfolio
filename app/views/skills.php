@@ -16,15 +16,5 @@
 
 
 </main>
-<?php
-    if (isset($_SESSION['admin'])){
-        echo "
-        <form method='POST' action='submit-post'>
-        <input type='text' name='Title' placeholder='title'>
-        <input type='text' name='Content' placeholder='Message'></input>
-        <input type='submit' value='Send'>
-        </form>
-        ";
-    }
-    ?>
+
 </content>
