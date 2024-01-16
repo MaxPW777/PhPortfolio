@@ -104,5 +104,16 @@ class DatabaseHandler
         }
     }
 
+    public function updateSkill($skillId, $skillName, $skillImage) {
+        try {
+            $stmt = $this->pdo->prepare("UPDATE skills SET SkillName = :skillName, image = :skillImage WHERE SkillID = :skillId");
+            $stmt->execute(['skillName' => $skillName, 'skillImage' => $skillImage, 'skillId' => $skillId]);
+        } catch (PDOException $e) {
+            // Handle errors
+            echo "Update failed: " . $e->getMessage();
+            exit;
+        }
+    }
+
 }
 

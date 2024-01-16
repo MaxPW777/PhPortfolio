@@ -45,6 +45,7 @@ switch ($url) {
         break;
     case $url[0] == 'admin':
         $cssFile = 'admin.css';
+        $jsFile = 'admin.js';
         include '../app/views/includes/header.php';
         include '../app/views/admin.php';
         break;
@@ -59,6 +60,9 @@ switch ($url) {
         break;
     case $url[0] == 'delete-skill':
         include '../app/controllers/delete-skill.php';
+        break;
+    case $url[0] == 'update-skill':
+        include '../app/controllers/update-skill.php';
         break;
     default:
         $cssFile = '404.css';
