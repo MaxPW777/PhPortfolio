@@ -19,6 +19,15 @@ $pdo = new DatabaseHandler();
         echo '<div class="skill">';
         echo '<img src="assets/' . htmlspecialchars($skill['image']) . '" alt="' . htmlspecialchars($skill['SkillName']) . '">';
         echo '<a href="projects.php?skillId=' . htmlspecialchars($skill['SkillID']) . '">' . htmlspecialchars($skill['SkillName']) . '</a>';
+        // Form for delete functionality
+        echo "<form method='POST' action='delete-skill'>";
+        echo "<input type='hidden' name='skill_id' value='" . htmlspecialchars($skill['SkillID']) . "'>"; // Use 'SkillID' as identifier
+        echo "<input type='submit' value='DELETE'>";
+        echo "</form>";
+        echo "<form method='POST' action='update-skill'>";
+        echo "<input type='hidden' name='skill_id' value='" . htmlspecialchars($skill['SkillID']) . "'>"; // Use 'SkillID' as identifier
+        echo "<input type='submit' value='UPDATE'>";
+        echo "</form>";
         echo '</div>';
     } ?>
 </div>
