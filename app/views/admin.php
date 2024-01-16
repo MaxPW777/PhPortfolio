@@ -27,6 +27,8 @@ $pdo = new DatabaseHandler();
     $messages = $pdo->fetchAllMessages();
     foreach ($messages as $message) {
         echo '<div class="message">';
+        echo '<div class="message-head" ><p>' . htmlspecialchars($message['Email']) . '</p>';
+        echo '<h4>' . htmlspecialchars($message['Name']) . '</h4></div>';
         echo '<p> ' . htmlspecialchars($message['Message']) . '</p>';
         echo '</div>';
     } ?>

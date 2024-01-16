@@ -19,17 +19,5 @@
         }
         ?>
     </div>
-    <?php
-    if ($_SESSION['admin'] == true) {
-        echo "<div class='Sidebar'>
-    <form method='POST' action='submit-post'>
-    <div class='text-form'>
-    <input type='text' name='Title' placeholder='title'>
-    <input type='text' name='Content' placeholder='Message'></input>
-    </div>
-        <input type='submit' value='Send'>
-    </form>
-    </div>";
-    }
-    ?>
+    
 </main>

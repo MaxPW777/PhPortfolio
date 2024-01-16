@@ -28,10 +28,13 @@ body {
 .skills,
 .messages,
 .posts {
-    background-color: red;
+    background-color: rgba(255, 255, 255, 0.20);
+    border-radius: 0.2rem;
     width: 100%;
     height: 100%;
     overflow-y: auto;
+    padding: 1rem;
+    gap: 1rem;
 }
 
 .skills {
@@ -43,7 +46,17 @@ body {
 }
 .messages {
     grid-area: Messages;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    .message-head{
+        display: flex;
+        gap: 1rem;
+    }
 }
 .posts {
     grid-area: Posts;
+    display: flex;
+    flex-direction: column;
 }
