@@ -1,5 +1,5 @@
 <?php
-
+session_start() ;
 $url = '';
 if (isset($_GET['url'])) {
     $url = explode('/', $_GET['url']);
@@ -51,6 +51,9 @@ switch ($url) {
         break;
     case $url[0] == 'submit-post':
         include '../app/controllers/submit-post.php';
+        break;
+    case $url[0] == 'delete-skill':
+        include '../app/controllers/delete-skill.php';
         break;
     default:
         $cssFile = '404.css';

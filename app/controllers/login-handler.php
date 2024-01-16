@@ -1,9 +1,7 @@
 <?php
 
-
 include '../app/models/db.php'; // Make sure this path is correct
 
-session_start(); // Start a session for login tracking
 
 $pdo = new DatabaseHandler();
 
@@ -12,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $password = $_POST['password'];
 
     if ($pdo->verifyUser($username, $password)) {
-        $_SESSION['user'] = $username; // Store username in session
+        $_SESSION['admin'] = true;
         header('Location: /'); // Redirect to homepage on success
         exit;
     } else {
@@ -22,4 +20,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 }
-?>

@@ -20,7 +20,7 @@
         ?>
     </div>
     <?php
-    if ($_SESSION['user'] = 'max') {
+    if ($_SESSION['admin'] == true) {
         echo "<div class='Sidebar'>
     <form method='POST' action='submit-post'>
         <input type='text' name='Title' placeholder='title'>

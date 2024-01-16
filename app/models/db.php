@@ -20,7 +20,7 @@ class DatabaseHandler
 
     public function verifyUser($username, $password)
     {
-        $stmt = $this->pdo->prepare("SELECT * FROM admin WHERE username = :username");
+        $stmt = $this->pdo->prepare("SELECT * FROM admin WHERE Username = :username");
         $stmt->execute(['username' => $username]);
         $user = $stmt->fetch();
 
@@ -43,7 +43,8 @@ class DatabaseHandler
         }
     }
 
-    public function insertPost($Title, $Content){
+    public function insertPost($Title, $Content)
+    {
         try {
             $stmt = $this->pdo->prepare("INSERT INTO blogposts (Title, Content) VALUES (?, ?)");
             $stmt->execute([$Title, $Content]);
@@ -67,6 +68,36 @@ class DatabaseHandler
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
+    public function getInfoFromCategory($skillId) {
+        try {
+            $stmt = $this->pdo->prepare("
+                SELECT p.* 
+                FROM projects p 
+                INNER JOIN projectskills ps ON p.ProjectID = ps.ProjectID 
+                WHERE ps.SkillID = :skillId
+            ");
+            $stmt->execute(['skillId' => $skillId]);
+            return $stmt->fetchAll();
+        } catch (PDOException $e) {
+            // Handle errors in query
+            echo "Query failed: " . $e->getMessage();
+            exit;
+        }
+    }
+
+    public function deleteSkill($skillId)
+    {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM skills WHERE SkillID = :skillId");
+            $stmt->execute(['skillId' => $skillId]);
+        } catch (PDOException $e) {
+            // Handle errors in deletion
+            echo "Deletion failed: " . $e->getMessage();
+            exit;
+        }
+    }
+
 }
 
 ?>
