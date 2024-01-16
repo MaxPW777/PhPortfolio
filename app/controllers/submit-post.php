@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pdo->insertPost($Title, $Content);
 
     // Redirect back to the post page or display a success message
-    header('Location: /blog');
+    header('Location: /admin');
     exit;
 }
 

@@ -35,6 +35,15 @@ $pdo = new DatabaseHandler();
 </div>
 <div class="posts">
     <?php
+    echo "<form method='POST' action='submit-post'>
+    <div class='text-form'>
+    <input type='text' name='Title' placeholder='title'>
+    <input type='text' name='Content' placeholder='Message'></input>
+    </div>
+        <input type='submit' value='Send'>
+    </form>";
+
+
     $skills = $pdo->fetchAllPosts();
     foreach ($skills as $skill) {
         echo '<div class="post">';

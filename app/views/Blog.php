@@ -1,6 +1,6 @@
 <div class="titles">
     <h2>Maximilian PINDER-WHITE</h2>
-    <h2>BLOG</h2>
+    <a href="/">BLOG</a>
 
 </div>
 <main>
