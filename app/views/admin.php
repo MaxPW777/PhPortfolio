@@ -32,14 +32,14 @@ $pdo = new DatabaseHandler();
     } ?>
 </div>
 <div class="posts">
-<?php
-        $skills = $pdo->fetchAllPosts();
-        foreach ($skills as $skill) {
-            echo '<div class="post">';
-            echo '<h3>' . htmlspecialchars($skill['Title']) . '</h3>'; // Use htmlspecialchars for security
-            echo '<p>' . htmlspecialchars($skill['Content']) . '</p>';
-            echo '<p class="date">' . htmlspecialchars($skill['PublishedDate']) . '</p>';
-            echo '</div>';
-        }
-        ?>
+    <?php
+    $skills = $pdo->fetchAllPosts();
+    foreach ($skills as $skill) {
+        echo '<div class="post">';
+        echo '<h3>' . htmlspecialchars($skill['Title']) . '</h3>';
+        echo '<p>' . htmlspecialchars($skill['Content']) . '</p>';
+        echo '<p class="date">' . htmlspecialchars($skill['PublishedDate']) . '</p>';
+        echo '</div>';
+    }
+    ?>
 </div>
