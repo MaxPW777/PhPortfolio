@@ -19,8 +19,14 @@
                 echo '<div class="project">';
                 echo '<h4>' . htmlspecialchars($project['Title']) . '</h4>';
                 echo '<p>' . htmlspecialchars($project['Description']) . '</p>';
-                echo '</div>'; // End of project div
+                if ($project['Image']) {
+                    echo '<img class="project-image" src="assets/project-images/' . htmlspecialchars($project['Image']) . '" alt="' . htmlspecialchars($project['Title']) . '">';
+                } else {
+                    echo "<h3>image not available</h3>";
+                }
+                echo '</div> <hr />'; // End of project div
             }
+
             echo '</div>';
 
             echo '</div>'; // End of skill div

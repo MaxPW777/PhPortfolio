@@ -52,37 +52,42 @@ SKILL;
 
         // Fetch and display projects related to this skill
         $projects = $pdo->fetchProjectsBySkillId($skill['SkillID']);
-        foreach ($projects as $project) {
-            echo <<<PROJECT
-                <div class="project">
-                    <h4>{$project['Title']}</h4>
-                    <p>{$project['Description']}</p>
-                    <div class="skill-buttons">
-                        <form method="POST" action="delete-project">
-                            <input type="hidden" name="project_id" value="{$project['ProjectID']}">
-                            <input type="submit" value="DELETE">
-                        </form>
-                        <button onclick="openDialog('updateProjectDialog{$project['ProjectID']}')">UPDATE</button>
+foreach ($projects as $project) {
+    echo <<<PROJECT
+        <div class="project">
+            <h4>{$project['Title']}</h4>
+            <p>{$project['Description']}</p>
+            <div class="skill-buttons">
+                <form method="POST" action="delete-project">
+                    <input type="hidden" name="project_id" value="{$project['ProjectID']}">
+                    <input type="submit" value="DELETE">
+                </form>
+                <button onclick="openDialog('updateProjectDialog{$project['ProjectID']}')">UPDATE</button>
+            </div>
+            <dialog id="updateProjectDialog{$project['ProjectID']}">
+                <form method="POST" action="update-project">
+                    <input type="hidden" name="project_id" value="{$project['ProjectID']}">
+                    <div class="update-input">
+                        <label for="project_title" class="update-label">Project Title</label>
+                        <input type="text" name="project_title" value="{$project['Title']}">
                     </div>
-                    <dialog id="updateProjectDialog{$project['ProjectID']}">
-                        <form method="POST" action="update-project">
-                        <input type="hidden" name="project_id" value="{$project['ProjectID']}">
-                            <div class="update-input">
-                                <label for="skill-image" class="update-label">project title</label>
-                                <input type="text" name="project_title" value="{$project['Title']}">
-                            </div>
-                            <div class="update-input">
-                                <label for="skill-image" class="update-label">project description</label>
-                                <input type="text" name="project_description" value="{$project['Description']}">
-                            </div>
-                            <input type="submit" value="Submit">
-                        </form>
-                        <button onclick="closeDialog('updateProjectDialog{$project['ProjectID']}')" autofocus>Close</button>
-                    </dialog>
-                </div>
-                <hr / >
+                    <div class="update-input">
+                        <label for="project_description" class="update-label">Project Description</label>
+                        <input type="text" name="project_description" value="{$project['Description']}">
+                    </div>
+                    <div class="update-input">
+                        <label for="project_image" class="update-label">Project Image</label>
+                        <input type="text" name="project_image" value="{$project['Image']}"> <!-- Assuming 'Image' is the key in your projects array -->
+                    </div>
+                    <input type="submit" value="Submit">
+                </form>
+                <button onclick="closeDialog('updateProjectDialog{$project['ProjectID']}')" autofocus>Close</button>
+            </dialog>
+        </div>
+        <hr />
 PROJECT;
-        }
+}
+
 
         echo '</div></div>'; // Close projects and skill divs
     }

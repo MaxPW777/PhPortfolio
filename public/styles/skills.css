@@ -79,6 +79,12 @@ content {
               display: flex;
               flex-direction: column;
               gap: 2rem;
+              overflow-y: auto;
+            }
+            .project-image{
+              width: 90%;
+              margin-top: 2rem;
+
             }
         }
         img {
@@ -115,4 +121,7 @@ content {
         }
       }
     
-    
+hr{
+  color: white;
+  background-color: white;
+}

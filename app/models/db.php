@@ -138,12 +138,13 @@ class DatabaseHandler
     }
     
 
-    public function updateProject($projectId, $title, $description) {
+    public function updateProject($projectId, $title, $description, $image) {
         try {
-            $stmt = $this->pdo->prepare("UPDATE projects SET Title = :title, Description = :description WHERE ProjectID = :projectId");
+            $stmt = $this->pdo->prepare("UPDATE projects SET Title = :title, Description = :description, Image = :image WHERE ProjectID = :projectId");
             $stmt->execute([
                 'title' => $title,
                 'description' => $description,
+                'image' => $image,
                 'projectId' => $projectId
             ]);
         } catch (PDOException $e) {
@@ -152,6 +153,7 @@ class DatabaseHandler
             exit;
         }
     }
+    
     
 
 }
