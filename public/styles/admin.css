@@ -9,6 +9,11 @@ header {
     grid-area: Header;
 }
 
+a{
+    color: white;
+    text-decoration: none;
+}
+
 header > h3:nth-child(2){
     border-left: 1px solid white;
     border-right: 1px solid white;
@@ -16,6 +21,7 @@ header > h3:nth-child(2){
 }
 
 body {
+    padding: 0 1rem;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 5rem calc(100vh - 6rem);

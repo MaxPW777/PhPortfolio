@@ -8,9 +8,9 @@ $pdo = new DatabaseHandler();
 ?>
 
 <header>
-    <h3>Skills</h3>
+    <a href="/skills"><h3>Skills</h3></a>
     <h3>Messages</h3>
-    <h3>Posts</h3>
+    <a href="/blog"><h3>Posts</h3></a>
 </header>
 
 <div class="skills">
