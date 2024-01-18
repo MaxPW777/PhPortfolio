@@ -1,4 +1,4 @@
-<h1>Maximilian PINDER-WHITE</h1>
+<a href="/"><h1>Maximilian PINDER-WHITE</h1></a> 
 <content>
     <div class="text">
         <p>Étudiant en informatique à Sophia Antipolis, j'ai 19 ans et je suis animé par une passion déterminée pour la

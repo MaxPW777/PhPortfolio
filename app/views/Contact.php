@@ -1,5 +1,5 @@
 <main>
-    <h1>Contact</h1>
+    <a href="/"><h1>CONTACT</h1></a> 
     <form method="POST" action="submit-contact">
         <input type="text" name="name" placeholder="Name">
         <input type="email" name="email" placeholder="Email">

@@ -17,6 +17,13 @@ content{
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    a{
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 1rem;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        color: var(--secondary-color)
+    }
 }
 
 .images{
@@ -32,10 +39,17 @@ content{
     }
 }
 
-a{
-    background-color: rgba(255, 255, 255, 0.3);
-    padding: 1rem;
-    border-radius: 1rem;
-    margin-top: 1rem;
-    color: var(--secondary-color)
+
+@media (width<800px) {
+    h1{
+        position: relative;
+    }
+    content{
+        margin-top: 5rem;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .text{
+        height: 60rem;
+    }
 }

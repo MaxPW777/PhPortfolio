@@ -77,17 +77,4 @@ main {
         flex-direction: column;
         gap: 2rem;
     }
-
-    .Sidebar{
-        width: 70vw;
-        height: auto;
-        form{
-            display: flex;
-            padding: 1rem;
-            .text-form{
-                display: flex;
-                flex-direction: column;
-            }
-        }
-    }
 }

@@ -63,6 +63,9 @@ content {
             justify-content: start;
             align-items: start;
             flex-direction: row;
+            .project{
+              display: flex;
+            }
         }
         img {
             width: 10rem;
@@ -75,6 +78,9 @@ content {
         }
     }
 
+    .project{
+      display: none;
+    }
 
       form{
           width: 40%;
