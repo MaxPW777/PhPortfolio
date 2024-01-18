@@ -64,6 +64,12 @@ switch ($url) {
     case $url[0] == 'update-skill':
         include '../app/controllers/update-skill.php';
         break;
+    case $url[0] == 'delete-project':
+        include '../app/controllers/delete-project.php';
+        break;
+    case $url[0] == 'update-project':
+        include '../app/controllers/update-project.php';
+        break;
     default:
         $cssFile = '404.css';
         include '../app/views/includes/header.php';

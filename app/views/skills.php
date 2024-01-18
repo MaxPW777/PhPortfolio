@@ -1,20 +1,29 @@
 <a id="homeBtn" href="/">HOME</a>
 <content>
     <main>
-    <?php
-    include '../app/models/db.php';
-    $pdo = new DatabaseHandler();
-    $skills = $pdo->fetchAllSkills();
+        <?php
+        include '../app/models/db.php';
+        $pdo = new DatabaseHandler();
+        $skills = $pdo->fetchAllSkills();
 
-    foreach ($skills as $skill) {
-        echo '<div class="skill">';
-        echo '<img src="assets/' . htmlspecialchars($skill['image']) . '" alt="' . htmlspecialchars($skill['SkillName']) . '">';
-        echo '<a href="projects.php?skillId=' . htmlspecialchars($skill['SkillID']) . '">' . htmlspecialchars($skill['SkillName']) . '</a>';
-        echo '</div>';
-    }
-?>
+        foreach ($skills as $skill) {
+            echo '<div class="skill">';
+            echo '<img src="assets/' . htmlspecialchars($skill['image']) . '" alt="' . htmlspecialchars($skill['SkillName']) . '">';
+            echo '<h3>' . htmlspecialchars($skill['SkillName']) . '</h3>';
 
+            // Fetch and display projects related to this skill
+            $projects = $pdo->fetchProjectsBySkillId($skill['SkillID']);
+            foreach ($projects as $project) {
+                echo '<div class="project">';
+                echo '<h4>' . htmlspecialchars($project['Title']) . '</h4>';
+                echo '<p>' . htmlspecialchars($project['Description']) . '</p>';
+                echo '</div>'; // End of project div
+            }
 
-</main>
+            echo '</div>'; // End of skill div
+        }
+        ?>
+    </main>
+
 
 </content>

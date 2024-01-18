@@ -62,12 +62,23 @@ class DatabaseHandler
         return $stmt->fetchAll();
     }
 
+    public function fetchProjectsBySkillId($skillId) {
+        $stmt = $this->pdo->prepare('
+            SELECT p.* FROM projects p
+            INNER JOIN projectskills ps ON p.ProjectID = ps.ProjectID
+            WHERE ps.SkillID = :skillId
+        ');
+        $stmt->execute(['skillId' => $skillId]);
+        return $stmt->fetchAll();
+    }
+
     public function fetchAllPosts()
     {
         $stmt = $this->pdo->prepare('SELECT * FROM blogposts ORDER BY PublishedDate DESC');
         $stmt->execute();
         return $stmt->fetchAll();
     }
+
     public function fetchAllMessages()
     {
         $stmt = $this->pdo->prepare('SELECT * FROM contactrequests ORDER BY SubmissionDate DESC');
@@ -114,6 +125,34 @@ class DatabaseHandler
             exit;
         }
     }
+
+    public function deleteProject($projectId) {
+        try {
+            $stmt = $this->pdo->prepare("DELETE FROM projects WHERE ProjectID = :projectId");
+            $stmt->execute(['projectId' => $projectId]);
+        } catch (PDOException $e) {
+            // Handle errors in deletion
+            echo "Deletion failed: " . $e->getMessage();
+            exit;
+        }
+    }
+    
+
+    public function updateProject($projectId, $title, $description) {
+        try {
+            $stmt = $this->pdo->prepare("UPDATE projects SET Title = :title, Description = :description WHERE ProjectID = :projectId");
+            $stmt->execute([
+                'title' => $title,
+                'description' => $description,
+                'projectId' => $projectId
+            ]);
+        } catch (PDOException $e) {
+            // Handle errors in update
+            echo "Update failed: " . $e->getMessage();
+            exit;
+        }
+    }
+    
 
 }
 
