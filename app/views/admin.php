@@ -47,7 +47,7 @@ $pdo = new DatabaseHandler();
             </dialog>
 
             <div class="projects">
-            <h3 ></h3>
+            <h3>PROJECTS</h3>
 SKILL;
 
         // Fetch and display projects related to this skill
@@ -56,11 +56,14 @@ SKILL;
             echo <<<PROJECT
                 <div class="project">
                     <h4>{$project['Title']}</h4>
-                    <form method="POST" action="delete-project">
-                        <input type="hidden" name="project_id" value="{$project['ProjectID']}">
-                        <input type="submit" value="DELETE">
-                    </form>
-                    <button onclick="openDialog('updateProjectDialog{$project['ProjectID']}')">UPDATE</button>
+                    <p>{$project['Description']}</p>
+                    <div class="skill-buttons">
+                        <form method="POST" action="delete-project">
+                            <input type="hidden" name="project_id" value="{$project['ProjectID']}">
+                            <input type="submit" value="DELETE">
+                        </form>
+                        <button onclick="openDialog('updateProjectDialog{$project['ProjectID']}')">UPDATE</button>
+                    </div>
                     <dialog id="updateProjectDialog{$project['ProjectID']}">
                         <form method="POST" action="update-project">
                         <input type="hidden" name="project_id" value="{$project['ProjectID']}">
@@ -77,6 +80,7 @@ SKILL;
                         <button onclick="closeDialog('updateProjectDialog{$project['ProjectID']}')" autofocus>Close</button>
                     </dialog>
                 </div>
+                <hr / >
 PROJECT;
         }
 
