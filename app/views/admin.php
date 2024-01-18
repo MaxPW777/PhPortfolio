@@ -19,24 +19,35 @@ $pdo = new DatabaseHandler();
     foreach ($skills as $skill) {
         echo <<<SKILL
         <div class="skill">
-            <img src="assets/{$skill['image']}" alt="{$skill['SkillName']}">
-            <h3>{$skill['SkillName']}</h3>
-            <form method="POST" action="delete-skill">
+            <div class="skill-name">
+                <img src="assets/{$skill['image']}" alt="{$skill['SkillName']}">
+                <h3>{$skill['SkillName']}</h3>
+            </div>
+            <div class="skill-buttons">
+                <form method="POST" action="delete-skill">
                 <input type="hidden" name="skill_id" value="{$skill['SkillID']}">
                 <input type="submit" value="DELETE">
             </form>
             <button onclick="openDialog('updateSkillDialog{$skill['SkillID']}')">UPDATE</button>
+            </div>
             <dialog id="updateSkillDialog{$skill['SkillID']}">
                 <form method="POST" action="update-skill">
-                    <input type="hidden" name="skill_id" value="{$skill['SkillID']}">
-                    <input type="text" name="skill_name" value="{$skill['SkillName']}">
-                    <input type="text" name="skill_image" value="{$skill['image']}">
+                <input type="hidden" name="skill_id" value="{$skill['SkillID']}">
+                    <div class="update-input">
+                        <label for="skill_name" class="update-label">skill name</label>
+                        <input type="text" name="skill_name" value="{$skill['SkillName']}">
+                    </div>
+                    <div class="update-input">
+                        <label for="skill-image" class="update-label">skill image link</label>
+                        <input type="text" name="skill_image" value="{$skill['image']}">
+                    </div>
                     <input type="submit" value="Submit">
                 </form>
                 <button onclick="closeDialog('updateSkillDialog{$skill['SkillID']}')" autofocus>Close</button>
             </dialog>
 
             <div class="projects">
+            <h3 ></h3>
 SKILL;
 
         // Fetch and display projects related to this skill
@@ -52,9 +63,15 @@ SKILL;
                     <button onclick="openDialog('updateProjectDialog{$project['ProjectID']}')">UPDATE</button>
                     <dialog id="updateProjectDialog{$project['ProjectID']}">
                         <form method="POST" action="update-project">
-                            <input type="hidden" name="project_id" value="{$project['ProjectID']}">
-                            <input type="text" name="project_title" value="{$project['Title']}">
-                            <input type="text" name="project_description" value="{$project['Description']}">
+                        <input type="hidden" name="project_id" value="{$project['ProjectID']}">
+                            <div class="update-input">
+                                <label for="skill-image" class="update-label">project title</label>
+                                <input type="text" name="project_title" value="{$project['Title']}">
+                            </div>
+                            <div class="update-input">
+                                <label for="skill-image" class="update-label">project description</label>
+                                <input type="text" name="project_description" value="{$project['Description']}">
+                            </div>
                             <input type="submit" value="Submit">
                         </form>
                         <button onclick="closeDialog('updateProjectDialog{$project['ProjectID']}')" autofocus>Close</button>
