@@ -8,9 +8,11 @@
 
         foreach ($skills as $skill) {
             echo '<div class="skill">';
+            echo '<div class="title-image">';
             echo '<img src="assets/' . htmlspecialchars($skill['image']) . '" alt="' . htmlspecialchars($skill['SkillName']) . '">';
             echo '<h3>' . htmlspecialchars($skill['SkillName']) . '</h3>';
-
+            echo '</div>';
+            echo '<div class="projects">';
             // Fetch and display projects related to this skill
             $projects = $pdo->fetchProjectsBySkillId($skill['SkillID']);
             foreach ($projects as $project) {
@@ -19,6 +21,7 @@
                 echo '<p>' . htmlspecialchars($project['Description']) . '</p>';
                 echo '</div>'; // End of project div
             }
+            echo '</div>';
 
             echo '</div>'; // End of skill div
         }

@@ -40,8 +40,7 @@ content {
       .skill {
           position: relative;
             cursor: pointer;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 0 auto;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -52,6 +51,13 @@ content {
             padding: 1rem;
             border-radius: 7px;
             transition: all 0.2s ease-in-out;
+          }
+          .title-image{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
         }
 
         .selected {
@@ -62,9 +68,17 @@ content {
             height: 100%;
             justify-content: start;
             align-items: start;
-            flex-direction: row;
-            .project{
+            flex-direction: column;
+            .projects{
+              width: 100%;
+              margin-top: 1rem;
+              height: 100%;
+              padding: 1.5rem;
+              border-radius: 1rem;
+              background-color: rgba(255, 255, 255, 0.4);
               display: flex;
+              flex-direction: column;
+              gap: 2rem;
             }
         }
         img {
@@ -78,7 +92,7 @@ content {
         }
     }
 
-    .project{
+    .projects{
       display: none;
     }
 
